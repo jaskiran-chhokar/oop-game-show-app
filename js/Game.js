@@ -1,3 +1,17 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Game.js */
+class Game {
+    constructor() {} 
+    missed = 0; 
+    phrases = [
+        { phrase: 'On Cloud Nine' }, 
+        { phrase: 'Down To Earth'}, 
+        { phrase: 'Raining Cats and Dogs'},
+        { phrase: 'Easy As Pie'}, 
+        { phrase: 'A Dime a Dozen'}
+    ];
+    getRandomPhrase() {
+        const phrases = this.phrases; 
+        let randomIndex = Math.floor(Math.random() * phrases.length); 
+        return phrases[randomIndex];
+    }
+    activePhrase = null; 
+}
