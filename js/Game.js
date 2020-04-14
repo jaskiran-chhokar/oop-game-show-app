@@ -21,6 +21,10 @@ class Game {
         const phrase = new Phrase(randomPhrase.phrase); 
         phrase.addPhraseToDisplay();
         this.activePhrase = phrase;
+        phrase.checkLetter();
         return phrase;
+    }
+    handleInteraction() {
+
     }
 }
