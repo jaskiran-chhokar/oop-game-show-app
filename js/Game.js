@@ -8,10 +8,11 @@ class Game {
         { phrase: 'Easy As Pie'}, 
         { phrase: 'A Dime a Dozen'}
     ];
+    activePhrase = null; 
     getRandomPhrase() {
         const phrases = this.phrases; 
         let randomIndex = Math.floor(Math.random() * phrases.length); 
         return phrases[randomIndex];
     }
-    activePhrase = null; 
+    
 }

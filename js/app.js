@@ -1,12 +1,7 @@
 const game = new Game(); 
-const phrase = new Phrase(game.getRandomPhrase().phrase); 
-
-
-// const logPhrase = phrase => {
-//     console.log(phrase.phrase); 
-// }
-
-// logPhrase(game.getRandomPhrase()); 
+const randomPhrase = game.getRandomPhrase(); 
+const phrase = new Phrase(randomPhrase.phrase); 
+phrase.addPhraseToDisplay();
 
 
 console.log(phrase.addPhraseToDisplay());

@@ -12,7 +12,7 @@ class Phrase {
 
         phraseLetters.forEach(letter => {
             li = document.createElement('li'); 
-            letter !== ' ' ? li.className = `hide letter ${letter}` : li.className = `space`;
+            letter !== ' ' ? li.className = `hide letter ${letter}` : li.className = `hide space`;
             li.innerHTML = letter;
             ul.appendChild(li);
         }); 
