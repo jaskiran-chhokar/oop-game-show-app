@@ -16,23 +16,24 @@ class Phrase {
         return ul;
     }
     checkLetter() {
-        const keys = document.querySelectorAll('.key');
+        const keyboard = document.querySelector('#qwerty');
         const phraseLetters = document.querySelectorAll('.letter');
+        let correctLetters = ''; 
 
-        keys.forEach(key => {
-
+        keyboard.addEventListener('click', e => {
             phraseLetters.forEach(phraseLetter => {
 
-                if(key.textContent === phraseLetter.textContent) {
-                    console.log(key.textContent); 
+                if(e.target.textContent === phraseLetter.textContent) {
+                    correctLetters += e.target.textContent; 
+                    console.log(correctLetters); 
+                    this.showMatchedLetter(phraseLetter); 
                     return true; 
-                } else {
-                    return false;
-                }
+                } 
             }); 
-        }); 
+        });
     }
-    showMatchedLetter() {
-
+    showMatchedLetter(letter) {
+        letter.classList.remove('hide'); 
+        letter.classList.add('show');
     }
 }
