@@ -8,7 +8,7 @@ class Game {
         { phrase: 'Easy As Pie'}, 
         { phrase: 'A Dime a Dozen'}
     ];
-    activePhrase = this.startGame(); 
+    activePhrase = null; 
     getRandomPhrase() {
         const phrases = this.phrases; 
         let randomIndex = Math.floor(Math.random() * phrases.length); 
@@ -20,6 +20,7 @@ class Game {
         const randomPhrase = this.getRandomPhrase(); 
         const phrase = new Phrase(randomPhrase.phrase); 
         phrase.addPhraseToDisplay();
+        this.activePhrase = phrase;
         return phrase;
     }
 }

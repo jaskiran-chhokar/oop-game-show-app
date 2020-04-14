@@ -1,6 +1,6 @@
 const game = new Game(); 
 
-//game.startGame();
+game.startGame();
 
 console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
