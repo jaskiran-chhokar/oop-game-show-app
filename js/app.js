@@ -1,8 +1,13 @@
-const game = new Game(); 
+let game;
 
-game.startGame();
+document.querySelector('#btn__reset').addEventListener('click', e => {
+    game = new Game(); 
+    game.startGame();
+});
 
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+//game.startGame();
+
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
 
 // const randomPhrase = game.getRandomPhrase(); 
