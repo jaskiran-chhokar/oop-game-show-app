@@ -33,6 +33,12 @@ class Game {
         return totalLetters === this.activePhrase.phrase.replace(/\s+/g, ''); 
     }
     removeLife() {
+        const heartImages = document.querySelectorAll('.tries img');
+        heartImages[this.missed].setAttribute('src','images/lostHeart.png');
+        if(this.missed === 5) { this.gameOver(); }
+        return this.missed++; 
+    }
+    gameOver() {
 
     }
     handleInteraction() {
