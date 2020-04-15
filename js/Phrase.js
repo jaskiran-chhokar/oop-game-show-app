@@ -15,25 +15,19 @@ class Phrase {
         }); 
         return ul;
     }
-    checkLetter() {
-        const keyboard = document.querySelector('#qwerty');
-        const phraseLetters = document.querySelectorAll('.letter');
-        let correctLetters = ''; 
-
-        keyboard.addEventListener('click', e => {
-            phraseLetters.forEach(phraseLetter => {
-                if(e.target.textContent === phraseLetter.textContent) {
-                    correctLetters += e.target.textContent; 
-                    this.showMatchedLetter(phraseLetter); 
-                    console.log('match: ' + e.target.textContent,phraseLetter.textContent); 
-                } else {
-                    console.log('NOT MATCH: ' + e.target.textContent,phraseLetter.textContent)
-                }
-            }); 
-        });
+    checkLetter(letter) {
+        return this.phrase.includes(letter); 
     }
     showMatchedLetter(letter) {
-        letter.classList.remove('hide'); 
-        letter.classList.add('show');
+        const phraseLetters = document.querySelectorAll('.letter'); 
+
+        phraseLetters.forEach(phraseLetter => {
+            if(phraseLetter.classList.contains(letter)) {
+                phraseLetter.classList.add('show');
+            } else {
+                phraseLetter.classList.remove('hide'); 
+            }
+        }); 
+        return letter;
     }
 }

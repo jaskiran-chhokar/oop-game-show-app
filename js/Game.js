@@ -25,10 +25,18 @@ class Game {
         return phrase;
     }
     checkForWin() {
+        const showLetters = document.querySelectorAll('.show'); 
+        let totalLetters = ''; 
+        showLetters.forEach(show => {
+            totalLetters += show.textContent; 
+        }); 
+        return totalLetters === this.activePhrase.phrase.replace(/\s+/g, ''); 
     }
     removeLife() {
+
     }
     handleInteraction() {
-         // check letter gonna go here !! 
+       // phrase.checkLetter(letter);
+         // check letter gonna go here !!
     }
 }
