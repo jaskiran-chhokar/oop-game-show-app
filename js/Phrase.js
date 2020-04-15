@@ -21,14 +21,18 @@ class Phrase {
         let correctLetters = ''; 
 
         keyboard.addEventListener('click', e => {
+
             phraseLetters.forEach(phraseLetter => {
+
+                allLetters += e.target.textContent; 
 
                 if(e.target.textContent === phraseLetter.textContent) {
                     correctLetters += e.target.textContent; 
-                    console.log(correctLetters); 
                     this.showMatchedLetter(phraseLetter); 
-                    return true; 
-                } 
+                    console.log('match: ' + e.target.textContent,phraseLetter.textContent); 
+                } else {
+                    console.log('NOT MATCH: ' + e.target.textContent,phraseLetter.textContent)
+                }
             }); 
         });
     }

@@ -24,7 +24,11 @@ class Game {
         phrase.checkLetter();
         return phrase;
     }
+    checkForWin() {
+    }
+    removeLife() {
+    }
     handleInteraction() {
-
+         // check letter gonna go here !! 
     }
 }
