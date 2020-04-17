@@ -1,5 +1,4 @@
 class Game {
-    constructor() {} 
     missed = 0; 
     phrases = [
         { phrase: 'On Cloud Nine' }, 
