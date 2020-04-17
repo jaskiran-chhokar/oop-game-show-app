@@ -13,3 +13,7 @@ I used JavaScript and Object-Oriented Programming to select a random/hidden phra
 2. if a letter is NOT correct, the player loses a heart point. 
 
 3. When all heart points (5 in total) are lost, the player loses the game. 
+
+## Live Game
+
+https://jaskiran-chhokar.github.io/oop-game-show-app/
