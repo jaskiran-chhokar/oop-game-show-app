@@ -3,6 +3,7 @@ class Phrase {
         this.phrase = phrase.toLowerCase(); 
     }
     phrase = this.phrase; 
+    //Display phrase on game board
     addPhraseToDisplay() {
         const ul = document.querySelector('#phrase > ul'); 
         let phraseLetters = this.phrase.split(''); 
@@ -15,9 +16,11 @@ class Phrase {
         }); 
         return ul;
     }
+    //Check if passed letter is in phrase
     checkLetter(letter) {
         return this.phrase.includes(letter); 
     }
+    //Display passed letter on game board after match is found
     showMatchedLetter(letter) {
         const phraseLetters = document.querySelectorAll('.letter'); 
         phraseLetters.forEach(phraseLetter => {
