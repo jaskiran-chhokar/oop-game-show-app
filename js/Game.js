@@ -8,7 +8,7 @@ class Game {
         { phrase: 'Easy As Pie'}, 
         { phrase: 'A Dime a Dozen'}
     ];
-    activePhrase = null; 
+    activePhrase = null;
     getRandomPhrase() {
         const phrases = this.phrases; 
         let randomIndex = Math.floor(Math.random() * phrases.length); 
@@ -30,16 +30,31 @@ class Game {
         showLetters.forEach(show => {
             totalLetters += show.textContent; 
         }); 
-        return totalLetters === this.activePhrase.phrase.replace(/\s+/g, ''); 
+        if(totalLetters === this.activePhrase.phrase.replace(/\s+/g, '')) {
+            this.gameOver(true); 
+            return true; 
+        }
+        return false; 
     }
     removeLife() {
         const heartImages = document.querySelectorAll('.tries img');
         heartImages[this.missed].setAttribute('src','images/lostHeart.png');
-        if(this.missed === 5) { this.gameOver(); }
+        if(this.missed === 4) { this.gameOver(false); }
         return this.missed++; 
     }
-    gameOver() {
-
+    gameOver(gameWon) {
+        const overlay = document.querySelector('#overlay'); 
+        const message = document.querySelector('#game-over-message');
+        if(gameWon) {
+            overlay.className = 'win'; 
+            overlay.style.display = 'flex';
+            message.textContent = 'You Won!'; 
+        }
+        if(gameWon === false) {
+            overlay.className = 'lose'; 
+            overlay.style.display = 'flex';
+            message.textContent = 'You lost!'; 
+        }
     }
     handleInteraction() {
        // phrase.checkLetter(letter);
