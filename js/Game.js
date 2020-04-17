@@ -56,8 +56,7 @@ class Game {
             message.textContent = 'You lost!'; 
         }
     }
-    handleInteraction() {
-       // phrase.checkLetter(letter);
-         // check letter gonna go here !!
+    handleInteraction(button) {
+        console.log(button);
     }
 }

@@ -27,7 +27,7 @@ class Phrase {
             } else {
                 phraseLetter.classList.remove('hide'); 
             }
-        }); 
+        });  
         return letter;
     }
 }
