@@ -58,19 +58,32 @@ class Game {
             game.gameOver();
         }
     }
+    resetGame() {
+        document.querySelector('#phrase > ul').innerHTML = '';
+        document.querySelectorAll('.key').forEach(key => key.className = 'key'); 
+        document.querySelectorAll('.tries img').forEach(img => img.setAttribute('src','images/liveHeart.png'));
+        this.missed = 0; 
+    }
     handleInteraction(button) {
         const buttonText = button.textContent; 
 
         if(game.activePhrase.checkLetter(buttonText)) {
             game.activePhrase.showMatchedLetter(buttonText);
             button.classList.add('chosen'); 
-            if(this.checkForWin) { this.checkForWin(); }
+
+            if(this.checkForWin()) { 
+                this.checkForWin(); 
+                game.resetGame();
+            }
         }
 
         if(game.activePhrase.checkLetter(buttonText) === false) {
             button.classList.add('wrong'); 
             this.removeLife();
+            
+            if(this.missed === 5) {
+                game.resetGame();
+            }
         }
-
     }
 }
