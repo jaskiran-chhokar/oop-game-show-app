@@ -20,13 +20,8 @@ class Phrase {
     }
     showMatchedLetter(letter) {
         const phraseLetters = document.querySelectorAll('.letter'); 
-
         phraseLetters.forEach(phraseLetter => {
-            if(phraseLetter.classList.contains(letter)) {
-                phraseLetter.classList.add('show');
-            } else {
-                phraseLetter.classList.remove('hide'); 
-            }
+            phraseLetter.classList.contains(letter) ? phraseLetter.classList.add('show') :  phraseLetter.classList.remove('hide');
         });  
         return letter;
     }

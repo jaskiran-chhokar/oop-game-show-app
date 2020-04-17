@@ -26,9 +26,7 @@ class Game {
     checkForWin() {
         const showLetters = document.querySelectorAll('.show'); 
         let totalLetters = ''; 
-        showLetters.forEach(show => {
-            totalLetters += show.textContent; 
-        }); 
+        showLetters.forEach(show => { totalLetters += show.textContent; }); 
         if(totalLetters === this.activePhrase.phrase.replace(/\s+/g, '')) {
             this.gameOver(true); 
             return true; 
@@ -65,24 +63,17 @@ class Game {
     }
     handleInteraction(button) {
         const buttonText = button.textContent; 
-
         if(game.activePhrase.checkLetter(buttonText)) {
             game.activePhrase.showMatchedLetter(buttonText);
             button.classList.add('chosen'); 
-
             if(this.checkForWin()) { 
                 this.checkForWin(); 
                 game.resetGame();
             }
-        }
-
-        if(game.activePhrase.checkLetter(buttonText) === false) {
+        } else if(game.activePhrase.checkLetter(buttonText) === false) {
             button.classList.add('wrong'); 
-            this.removeLife();
-            
-            if(this.missed === 5) {
-                game.resetGame();
-            }
+            this.removeLife(); 
+            if(this.missed === 5) { game.resetGame(); }
         }
     }
 }
