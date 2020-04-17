@@ -49,14 +49,28 @@ class Game {
             overlay.className = 'win'; 
             overlay.style.display = 'flex';
             message.textContent = 'You Won!'; 
+            game.gameOver();
         }
         if(gameWon === false) {
             overlay.className = 'lose'; 
             overlay.style.display = 'flex';
             message.textContent = 'You lost!'; 
+            game.gameOver();
         }
     }
     handleInteraction(button) {
-        console.log(button);
+        const buttonText = button.textContent; 
+
+        if(game.activePhrase.checkLetter(buttonText)) {
+            game.activePhrase.showMatchedLetter(buttonText);
+            button.classList.add('chosen'); 
+            if(this.checkForWin) { this.checkForWin(); }
+        }
+
+        if(game.activePhrase.checkLetter(buttonText) === false) {
+            button.classList.add('wrong'); 
+            this.removeLife();
+        }
+
     }
 }

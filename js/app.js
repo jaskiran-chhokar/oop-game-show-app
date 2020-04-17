@@ -1,5 +1,4 @@
-let game;
-game = new Game(); 
+let game = new Game(); 
 
 document.querySelector('#btn__reset').addEventListener('click', e => {
     game.startGame();
