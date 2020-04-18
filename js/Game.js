@@ -59,7 +59,7 @@ class Game {
         if(gameWon === false) {
             overlay.className = 'lose'; 
             overlay.style.display = 'flex';
-            message.textContent = 'Sorry :( Better Luck Next Time!'; 
+            message.textContent = 'You Lost! :( Better Luck Next Time!'; 
             game.gameOver();
         }
     }
